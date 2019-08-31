@@ -8,6 +8,8 @@ class MY_Controller extends CI_Controller {
 	
 	// declare property 
 	public $content_view;
+	public $_title;
+	public $_subTitle;
 	
 
 	function __construct(){

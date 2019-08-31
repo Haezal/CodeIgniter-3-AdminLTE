@@ -51,13 +51,13 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                Dashboard
-                <small>Control panel</small>
+                <?php echo $this->_title ?>
+                <small><?php echo $this->_subTitle ?></small>
             </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
+<!--            <ol class="breadcrumb">-->
+<!--                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>-->
+<!--                <li class="active">Dashboard</li>-->
+<!--            </ol>-->
         </section>
 
         <!-- Main content -->
@@ -70,9 +70,9 @@
     </div><!-- /.content-wrapper -->
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.2.0
+            <b>Version</b> x.x.x
         </div>
-        <strong>Copyright &copy; 2014-2015 <a href="http://www.haezal.com">Haezal Musa</a>.</strong> All rights reserved.
+        <strong>Developer <a href="http://www.haezal.com">Haezal Musa</a>.</strong>
     </footer>
 
     <!-- Control Sidebar -->

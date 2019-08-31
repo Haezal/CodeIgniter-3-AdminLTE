@@ -26,6 +26,8 @@ class Home extends MY_Controller {
 
 	public function index()
 	{
+	    $this->_title = 'Home';
+	    $this->_subTitle = 'Dashboard';
 		$this->_render_page();
 		//render_page($data);
 	}
