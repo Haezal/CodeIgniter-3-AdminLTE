@@ -1,9 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-/**
- * This library extends the default controller and adds some useful extra features.
- * Features:
- *         1. bla bla bla.
- */
+
+
+
 class MY_Controller extends CI_Controller {
 	
 	// declare property 
@@ -33,8 +31,8 @@ class MY_Controller extends CI_Controller {
     } // end function 
 
     // load render page
-    public function _render_page($data = null)
+    public function _render_page($data = [])
     {
-    	$this->load->view('layouts/main');
+    	$this->load->view('layouts/main', $data);
     }
 } // end class

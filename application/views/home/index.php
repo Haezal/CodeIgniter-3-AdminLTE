@@ -1,1 +1,1 @@
-<h1>This is Home Page</h1>
+<?php echo $welcome_message ?>
