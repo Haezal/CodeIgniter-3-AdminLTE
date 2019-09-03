@@ -16,20 +16,8 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link href="<?php echo base_url()?>public/dist/css/skins/_all-skins.min.css" rel="stylesheet" type="text/css" />
-    <!-- iCheck -->
-    <link href="<?php echo base_url()?>public/plugins/iCheck/flat/blue.css" rel="stylesheet" type="text/css" />
-    <!-- Morris chart -->
-    <link href="<?php echo base_url()?>public/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
-    <!-- jvectormap -->
-    <link href="<?php echo base_url()?>public/plugins/jvectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
-    <!-- Date Picker -->
-    <link href="<?php echo base_url()?>public/plugins/datepicker/datepicker3.css" rel="stylesheet" type="text/css" />
-    <!-- Daterange picker -->
-    <link href="<?php echo base_url()?>public/plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link href="<?php echo base_url()?>public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -54,10 +42,6 @@
                 <?php echo $this->_title ?>
                 <small><?php echo $this->_subTitle ?></small>
             </h1>
-<!--            <ol class="breadcrumb">-->
-<!--                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>-->
-<!--                <li class="active">Dashboard</li>-->
-<!--            </ol>-->
         </section>
 
         <!-- Main content -->
@@ -86,27 +70,6 @@
 </script>
 <!-- Bootstrap 3.3.2 JS -->
 <script src="<?php echo base_url()?>public/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="<?php echo base_url()?>public/plugins/morris/morris.min.js" type="text/javascript"></script>
-<!-- Sparkline -->
-<script src="<?php echo base_url()?>public/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
-<!-- jvectormap -->
-<script src="<?php echo base_url()?>public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url()?>public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
-<!-- jQuery Knob Chart -->
-<script src="<?php echo base_url()?>public/plugins/knob/jquery.knob.js" type="text/javascript"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js" type="text/javascript"></script>
-<script src="<?php echo base_url()?>public/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
-<!-- datepicker -->
-<script src="<?php echo base_url()?>public/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="<?php echo base_url()?>public/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
-<!-- Slimscroll -->
-<script src="<?php echo base_url()?>public/plugins/slimScroll/jquery.slimscroll.min.js" type="text/javascript"></script>
-<!-- FastClick -->
-<script src="<?php echo base_url()?>public/plugins/fastclick/fastclick.min.js" type="text/javascript"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url()?>public/dist/js/app.min.js" type="text/javascript"></script>
 </body>
