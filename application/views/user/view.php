@@ -18,4 +18,4 @@
     </div>
 </div>
 
-<a href="<?php echo site_url('/user') ?>" class="btn btn-primary">Back</a>
+<a href="<?php echo $this->session->userdata('previous_url') ?>" class="btn btn-default">Back</a>

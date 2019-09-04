@@ -20,6 +20,7 @@
 
         <div class="box-footer">
             <button type="submit" class="btn btn-primary">Submit</button>
+            <a href="<?php echo $this->session->userdata('previous_url') ?>" class="btn btn-default">Cancel</a>
         </div>
     </form>
 </div>

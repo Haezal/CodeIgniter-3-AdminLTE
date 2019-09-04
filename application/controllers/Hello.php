@@ -1,25 +1,19 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
 
-class User extends MY_Controller {
-
-	public function __construct()
-	{
-		parent::__construct();
+class Hello extends MY_Controller
+{
+    function __construct() {
+        parent::__construct();
         $this->load->model('UserModel');
-	}
+    }
 
-	public function index()
-	{
-	    $this->_title = 'User';
-	    $this->_subTitle = 'List';
-
+    function index() {
         $this->session->set_userdata('previous_url', current_url());
 
         $config = array();
-        $config["base_url"] = site_url('/user/index');
+        $config["base_url"] = site_url('/hello/index');
         $config["total_rows"] = $this->UserModel->getCount();
-        $config["per_page"] = 10;
+        $config["per_page"] = 1;
         $config["uri_segment"] = 3;
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] ="</ul>";
@@ -41,95 +35,94 @@ class User extends MY_Controller {
         $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $links = $this->pagination->create_links();
 
-        $users = $this->UserModel->getList($config["per_page"], $page);
+        $data = $this->UserModel->getList($config["per_page"], $page);
 
-		$this->_render_page([
-		    'users' => $users,
+        $this->_render_page( array(
+            'data' => $data,
             'links' => $links
-        ]);
-		//render_page($data);
-	}
+        ) );
+    }
 
-	public function create() {
-        $this->_title = 'User';
-        $this->_subTitle = 'Create';
+    function create() {
 
-        $data = array(
-            'name' => '',
-            'email' => '',
-            'password' => ''
-        );
+        // declar
+        // $data = array(
+        //     'name' => '', 
+        // );
 
         $this->load->library('form_validation');
-        $this->load->model('UserModel');
-
         $rules = array(
             array(
                 'field' => 'name',
-                'label' => 'Name',
+                'label' => 'Name', 
                 'rules' => 'required'
-            )
+            ), // name
+            array(
+                'field' => 'email',
+                'label' => 'Email', 
+                'rules' => 'required|valid_email'
+            ), // email
+            array(
+                'field' => 'password',
+                'label' => 'Password', 
+                'rules' => 'required'
+            ), // password 
         );
-
         $this->form_validation->set_rules($rules);
 
-        if ($this->form_validation->run() == TRUE) {
+        if ($this->form_validation->run()) {
+            // if validation pass
+
+            // fetch data from html form
             $data = array(
                 'name' => $this->input->post('name'),
                 'email' => $this->input->post('email'),
                 'password' => $this->input->post('password'),
             );
             $this->UserModel->insert($data);
-
-            redirect('/user');
+            redirect('/hello'); // sama macam Header('Location: hello.php')
         }
 
-	    $this->_render_page($data);
-    }
+        $this->_render_page();
+    } // end function insert
 
-    public function update($id) {
-        $this->_title = 'User';
-        $this->_subTitle = 'Update';
+    function update($id) {
 
-        $this->load->model('UserModel');
         $data = $this->UserModel->getData($id);
-
+        // echo '<pre>';print_r($data);exit;
         $this->load->library('form_validation');
-        $this->load->model('UserModel');
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('password', 'Password', 'required');
 
-        $rules = array(
-            array(
-                'field' => 'name',
-                'label' => 'Name',
-                'rules' => 'required'
-            )
-        );
+        if ($this->form_validation->run()) {
+            // if validation pass
 
-        $this->form_validation->set_rules($rules);
-
-        if ($this->form_validation->run() == TRUE) {
+            // fetch data from html form
             $data = array(
                 'name' => $this->input->post('name'),
                 'email' => $this->input->post('email'),
+                'password' => $this->input->post('password'),
             );
+            
             $this->UserModel->update($id, $data);
-
+//            redirect('/hello'); // sama macam Header('Location: hello.php')
             redirect($this->session->userdata('previous_url'));
         }
 
         $this->_render_page($data);
-    }
+    } // end function insert
 
-	public function view($id) {
-	    $user = $this->UserModel->getData($id);
-
-	    $this->_render_page([
-	        'user' => $user
-        ]);
+    function view($id) {
+        $data = $this->UserModel->getData($id);
+        $this->_render_page($data);
     }
 
     function delete($id) {
         $this->UserModel->delete($id);
-        redirect($this->session->userdata('previous_url'));
+        redirect('/hello');
     }
+
 }
+
+?>

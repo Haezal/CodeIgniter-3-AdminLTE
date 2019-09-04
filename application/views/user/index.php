@@ -9,7 +9,6 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th></th>
@@ -18,7 +17,6 @@
             <tbody>
             <?php $bil = 1;foreach ($users as $user) { ?>
                 <tr>
-                    <td><?php echo $bil++ ?></td>
                     <td><?php echo $user['name'] ?></td>
                     <td><?php echo $user['email'] ?></td>
                     <td>
@@ -30,5 +28,9 @@
             <?php } ?>
             </tbody>
         </table>
+
+    </div>
+    <div class="box-footer">
+        <?php echo $links ?>
     </div>
 </div>

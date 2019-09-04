@@ -25,7 +25,7 @@ class MY_Controller extends CI_Controller {
         } 
         else
         {
-        	show_error('View file not found. Please create application/views/'.CONTROLLER.'/'.METHOD.'.php',404);
+//        	show_error('View file not found. Please create application/views/'.CONTROLLER.'/'.METHOD.'.php',404);
         }
 
     } // end function 

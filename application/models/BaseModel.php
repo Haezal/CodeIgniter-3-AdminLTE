@@ -8,6 +8,7 @@ class BaseModel extends CI_Model {
         parent::__construct();
     }
 
+
     public function get_all() {
         return $this->db->get($this->table)
             ->result();
