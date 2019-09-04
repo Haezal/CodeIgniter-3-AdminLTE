@@ -10,6 +10,7 @@
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="test" class="form-control" id="name" name="name" value="<?php echo $name ?>" placeholder="Enter name">
+                <?php echo form_error('name', '<div class="error">', '</div>'); ?>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
