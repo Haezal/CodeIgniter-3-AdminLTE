@@ -10,6 +10,10 @@
                 <th>Name</th>
                 <td><?php echo $user['name'] ?></td>
             </tr>
+            <tr>
+                <th>Email</th>
+                <td><?php echo $user['email'] ?></td>
+            </tr>
         </table>
     </div>
 </div>
