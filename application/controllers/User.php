@@ -22,6 +22,41 @@ class User extends MY_Controller {
 		//render_page($data);
 	}
 
+	public function create() {
+        $this->_title = 'User';
+        $this->_subTitle = 'Create';
+
+        $data = array(
+            'name' => '',
+            'email' => ''
+        );
+
+        $this->load->library('form_validation');
+        $this->load->model('UserModel');
+
+        $rules = array(
+            array(
+                'field' => 'name',
+                'label' => 'City Name',
+                'rules' => 'required'
+            )
+        );
+
+        $this->form_validation->set_rules($rules);
+
+        if ($this->form_validation->run() == TRUE) {
+            $data = array(
+                'name' => $this->input->post('name'),
+                'email' => $this->input->post('email')
+            );
+            $this->UserModel->insert($data);
+
+            redirect('/user');
+        }
+
+	    $this->_render_page($data);
+    }
+
 	public function view($id) {
 	    $user = $this->UserModel->getUser($id);
 

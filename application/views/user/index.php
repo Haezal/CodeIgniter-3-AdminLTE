@@ -1,6 +1,9 @@
 <div class="box">
     <div class="box-header">
         <h3 class="box-title">User List</h3>
+        <div class="box-tools pull-right">
+            <a href="<?php echo site_url('/user/create') ?>" class="btn btn-success btn-sm">Create new user</a>
+        </div>
     </div>
     <div class="box-body">
         <table class="table">
