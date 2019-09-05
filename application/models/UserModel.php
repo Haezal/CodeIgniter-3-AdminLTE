@@ -26,6 +26,12 @@ class UserModel extends CI_Model {
         return $this->db->get('users')->row_array();
     }
 
+    function getByEmail($email) {
+        $this->db->where('email', $email);
+        return $this->db->get('users')->row_array();
+
+    }
+
     function update($id, $data) {
         $this->db->where('id', $id);
         $this->db->update('users', $data);
