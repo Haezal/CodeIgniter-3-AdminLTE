@@ -45,6 +45,7 @@
             <div class="form-group has-feedback">
                 <input type="password" class="form-control" placeholder="Password" name="password">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <?php echo form_error('password') ?>
             </div>
             <div class="row">
                 <div class="col-xs-8">

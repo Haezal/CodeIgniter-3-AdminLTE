@@ -24,4 +24,8 @@ class Home extends MY_Controller {
         ]);
 		//render_page($data);
 	}
+
+	public function dashboard() {
+
+	}
 }

@@ -7,6 +7,7 @@
             <li class="header">MAIN NAVIGATION</li>
 
             <li class="active"><a href="<?php echo site_url('/') ?>"><i class="fa fa-home"></i> Homepage</a></li>
+            <li class=""><a href="<?php echo site_url('/hello') ?>"><i class="fa fa-users"></i> Hello</a></li>
             <li class=""><a href="<?php echo site_url('/user') ?>"><i class="fa fa-users"></i> Users</a></li>
 
 

@@ -10,11 +10,12 @@ class Hello extends MY_Controller
     function index() {
         $this->session->set_userdata('previous_url', current_url());
 
+        // add here
         $config = array();
         $config["base_url"] = site_url('/hello/index');
         $config["total_rows"] = $this->UserModel->getCount();
-        $config["per_page"] = 1;
-        $config["uri_segment"] = 3;
+        $config["per_page"] = 3;
+        // $config["uri_segment"] = 3; //
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] ="</ul>";
         $config['num_tag_open'] = '<li>';
@@ -29,17 +30,19 @@ class Hello extends MY_Controller
         $config['first_tagl_close'] = "</li>";
         $config['last_tag_open'] = "<li>";
         $config['last_tagl_close'] = "</li>";
+
         $this->load->library('pagination');
-        $this->pagination->initialize($config);
+        $this->pagination->initialize($config); // initialize config
 
-        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-        $links = $this->pagination->create_links();
-
-        $data = $this->UserModel->getList($config["per_page"], $page);
+        $page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0; // get page
+        $links = $this->pagination->create_links(); // create pagination links
+        
+        // limit, offset
+        $data = $this->UserModel->getList($config["per_page"], $page); 
 
         $this->_render_page( array(
             'data' => $data,
-            'links' => $links
+            'links' => $links, // pass the pagination link here
         ) );
     }
 

@@ -16,6 +16,7 @@
 
     </div>
     <!-- end body -->
+    
     <a href="<?php echo $this->session->userdata('previous_url') ?>">Back</a>
 </div>
 <!-- end box -->

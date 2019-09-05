@@ -19,8 +19,9 @@ class User extends MY_Controller {
         $config = array();
         $config["base_url"] = site_url('/user/index');
         $config["total_rows"] = $this->UserModel->getCount();
-        $config["per_page"] = 10;
+        $config["per_page"] = 2;
         $config["uri_segment"] = 3;
+
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] ="</ul>";
         $config['num_tag_open'] = '<li>';
@@ -131,5 +132,28 @@ class User extends MY_Controller {
     function delete($id) {
         $this->UserModel->delete($id);
         redirect($this->session->userdata('previous_url'));
+    }
+
+    function report() {
+
+        $data = $this->UserModel->getUserWithStaff();
+
+        // echo '<pre>';print_r($data);
+        $arr = array();
+
+        foreach ($data as $key => $item) {
+            $arr[$item['user_id']]['user_id'] = $item['user_id'];
+            $arr[$item['user_id']]['name'] = $item['name'];
+            $arr[$item['user_id']]['staffs'][$key] = $item;
+        }
+
+        // echo '<pre>';print_r($arr);exit;
+
+        ksort($arr, SORT_NUMERIC);
+//        echo '<pre>';print_r($arr);
+
+        $this->_render_page(array(
+            'arr' => $arr,
+        ));
     }
 }
